@@ -10,7 +10,7 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("https://friendly-einstein-5e70bd.netlify.com/todos")
+    fetch("https://jrh-todo-list-app.herokuapp.com/todos")
       .then(response => response.json())
       .then(data => this.setState({ todos: data }));
   }
@@ -32,7 +32,7 @@ class App extends React.Component {
   };
   addTodo = event => {
     event.preventDefault();
-    fetch("https://friendly-einstein-5e70bd.netlify.com/todo", {
+    fetch("https://jrh-todo-list-app.herokuapp.com/todo", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -49,7 +49,7 @@ class App extends React.Component {
       );
   };
   deleteTodo = id => {
-    fetch(`https://friendly-einstein-5e70bd.netlify.com/todo/${id}`, {
+    fetch(`https://jrh-todo-list-app.herokuapp.com/${id}`, {
       method: "DELETE"
     }).then(
       this.setState({
